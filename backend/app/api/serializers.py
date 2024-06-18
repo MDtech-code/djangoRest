@@ -65,7 +65,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         user.set_password(validate_data['password'])
         user.save()
 
-        # Generate a new verification token 
+        #! Generate a new verification token 
         token =generate_verification_token(user.pk)
         print(token)
         user.verification_token =token
